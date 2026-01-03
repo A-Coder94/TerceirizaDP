@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if (window.matchMedia && window.matchMedia('(max-width: 900px)').matches) {
+            if (!location.pathname.endsWith('mobile.html')) {
+                location.href = 'mobile.html';
+            }
+        }
+    </script>
+    <title>Contato - Terceiriza DP | Assessoria Especializada Marta Rocha</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="contact-page">
+
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt="Terceiriza DP Logo"></a>
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Página Inicial</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contato" class="section bg-contrato">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <h2 style="color: white;">Solicite um Orçamento</h2>
+                    <p style="color: white;">Deixe seus dados e entraremos em contato em breve.</p>
+
+                    <form action="https://api.web3forms.com/submit" method="POST" id="form">
+
+                        <input type="hidden" name="access_key" value="SEU_ACCESS_KEY_AQUI">
+
+                        <div class="input-group">
+                            <input type="text" name="name" placeholder="Seu Nome Completo" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+                        </div>
+
+                        <div class="input-group">
+                            <select name="servico" required>
+                                <option value="" disabled selected>Qual serviço procura?</option>
+                                <option value="Empresas">Departamento Pessoal para Empresas</option>
+                                <option value="MEI">Gestão para MEI</option>
+                                <option value="Domestica">Gestão de Empregada Doméstica</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <textarea name="message" placeholder="Como podemos te ajudar?" required></textarea>
+                        </div>
+
+                        <input type="hidden" name="from_name" value="Site Terceiriza DP">
+                        <input type="hidden" name="subject" value="Novo Contato do Site!">
+
+                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+
+                        <div id="result"></div>
+                    </form>
+                    <a href="https://wa.me/5511970152735" class="whatsapp-btn" target="_blank" rel="noopener">Enviar
+                        pelo WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Terceiriza DP. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

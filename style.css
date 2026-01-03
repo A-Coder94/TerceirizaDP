@@ -1,0 +1,687 @@
+:root {
+    --azul: #0a192f;
+    --laranja: #ff8c00;
+    --branco: #ffffff;
+    --cinza: #f4f4f4;
+    --transparente: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--azul);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hidden-section {
+    display: none;
+}
+
+/* Header fixo com transição */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: 0.5s;
+}
+
+/* Offset content so fixed header doesn't overlap main content
+   -> keep hero background visible by adding padding inside .hero instead of moving the whole main element */
+.hero {
+    padding-top: 160px; /* push hero content down while leaving background at top */
+}
+
+@media (max-width: 900px) {
+    .hero {
+        padding-top: 120px;
+    }
+}
+
+header.scroll {
+    background: var(--azul);
+    padding: 10px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo img {
+    height: 110px;
+}
+
+.logo {
+    margin-right: 20px;
+    margin-left: 8px; /* push logo closer to left edge */
+}
+
+/* Make header nav full-width and keep 80px from screen edges */
+header nav {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0; /* reset margins so flex handles spacing */
+    margin-left: auto; /* push menu to the right */
+}
+
+.nav-link {
+    color: var(--branco);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Efeito de brilho solicitado */
+.nav-link:hover {
+    color: var(--laranja);
+    text-shadow: 0 0 10px var(--laranja), 0 0 20px rgba(255, 140, 0, 0.5);
+}
+
+/* Hero Section com Parallax */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+    position: relative;
+    background-image: url('img/escritorio.png');
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+/* Hero text adjustments for a cleaner, slightly larger intro */
+.hero-content .tagline {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 18px;
+}
+
+.hero-texts {
+    max-width: 900px;
+    margin: 28px auto 0;
+}
+
+.hero-texts .lead {
+    color: rgba(255,255,255,0.92);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-align: left;
+    opacity: 0.98;
+}
+
+/* Slightly increase the h1 on large screens for more presence */
+@media (min-width: 1200px) {
+    .hero h1 { font-size: 4.2rem; }
+    .hero-texts .lead { font-size: 1.125rem; }
+}
+
+@media (max-width: 900px) {
+    .hero h1 { font-size: 2.2rem; }
+    .hero-content .tagline { font-size: 0.95rem; }
+    .hero-texts .lead { font-size: 0.98rem; text-align: left; padding: 0 12px; margin: 14px 0; }
+}
+
+/* espaço maior entre botão e primeiros parágrafos */
+.hero-content .btn-primary {
+    margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+    .hero-content .btn-primary { margin-top: 16px; }
+}
+
+/* Botão com efeito de pulsação */
+.btn-primary {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--laranja);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(233, 218, 17, 0.425);
+    margin-bottom: 40px; /* Ajuste o valor conforme necessário */
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--laranja);
+}
+
+/* WhatsApp button in contact page */
+.whatsapp-btn {
+    display: block;
+    background: #25D366;
+    color: #fff;
+    text-align: center;
+    padding: 12px 18px;
+    border-radius: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 18px auto 0; /* center horizontally */
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.22);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
+    padding-right: center;
+}
+
+/* subtle pulse on focus/hover */
+.whatsapp-btn:active {
+    transform: scale(0.98);
+}
+
+/* nav active link */
+.nav-link.active {
+    color: var(--laranja);
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: var(--transparente);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 60px;
+    border-radius: 20px;
+    margin-top: -100px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Seções Gerais */
+.section {
+    padding: 100px 0;
+}
+
+.bg-light {
+    position: relative;
+    background-image: url('img/reuniaoGrafico.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* fallback color while image loads */
+    background-color: var(--cinza);
+    color: #222222ef;
+}
+
+.bg-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.479);
+    /* leve escurecimento */
+    pointer-events: none;
+}
+
+.bg-light .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Seção de contato (formulário) dentro de #servicos: usar imagem contrato */
+#servicos #contato {
+    position: relative;
+    /* use solid color here so the contrato image is on the .bg-light section */
+    background-image: none;
+    background-color: var(--cinza);
+    color: var(--azul);
+}
+
+#servicos #contato::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+}
+
+#servicos #contato .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Grid de Serviços */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* one card per row */
+    gap: 30px;
+    margin-top: 50px;
+    align-items: start;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(6px);
+    padding: 20px 22px;
+    border-radius: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: left;
+    box-shadow: 0 6px 18px rgba(10,25,47,0.06);
+    max-width: 900px; /* wider cards to fit more text */
+    margin: 0 auto; /* center each card */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(10,25,47,0.12);
+}
+
+.card-icon {
+    font-size: 2.6rem;
+    flex: 0 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h3 {
+    margin: 0 0 6px 0;
+}
+
+.card p {
+    margin: 0;
+    color: #333;
+}
+
+.card .btn-text {
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.contact-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+}
+
+
+#form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--laranja);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+#result {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Responsive adjustments for contact image */
+@media (max-width: 900px) {
+    .contact-wrapper {
+        max-width: 600px;
+    }
+
+    /* artwork removed — no responsive rules needed */
+}
+
+/* Larger screens: position image beyond the form to the right */
+@media (min-width: 1000px) {
+    .contact-wrapper {
+        max-width: 900px;
+    }
+
+    /* artwork removed for large screens */
+}
+
+/* Background for contato page */
+.bg-contrato {
+    position: relative;
+    background-image: url('img/reuniaoGrafico.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+}
+
+.bg-contrato::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(10,25,47,0.55);
+    pointer-events: none;
+}
+
+/* Ajuste apenas para a página de serviços: ícone acima do texto */
+.services-page .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.services-page .card-icon {
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    flex: none;
+}
+
+.services-page .card p {
+    color: #333;
+}
+
+.services-page .card .btn-text {
+    margin-top: 12px;
+}
+
+.bg-contrato .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Page-specific offsets so fixed header doesn't overlap content on subpages
+   Keep the main page (hero) as-is; only push down sections on services/contact pages */
+.services-page {
+    position: relative; /* create positioning context for absolute footer */
+}
+
+.services-page .section {
+    padding: 220px 0 120px; /* keep top offset, add bottom padding so footer doesn't cover content */
+}
+
+.contact-page {
+    position: relative; /* create positioning context for absolute footer */
+}
+
+.contact-page .section {
+    padding: 120px 0 120px; /* reduce overall height for contact page and add bottom padding */
+}
+
+@media (max-width: 900px) {
+    .services-page .section {
+        padding: 160px 0 12px;
+    }
+
+    .contact-page .section {
+        padding: 90px 0 8px;
+    }
+}
+
+/* Footer: make it thin and consistent across pages */
+footer {
+    padding: 12px 0;
+    background: transparent;
+}
+
+footer .container p {
+    margin: 0;
+    text-align: center;
+    color: #222222ef;
+    font-size: 0.95rem;
+}
+
+main {
+    flex: 1; /* ensure footer sticks to bottom and avoid extra white space */
+}
+
+/* Make footer overlap the background image on services/contact pages
+   so the text appears on top of the photo (transparent background). */
+.services-page footer,
+.contact-page footer {
+    background: transparent;
+    padding: 8px 0;
+    position: absolute; /* overlay the page section background */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+.services-page footer .container p,
+.contact-page footer .container p {
+    color: #fff; /* white text over photo */
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .services-page .section {
+        padding: 160px 0 100px;
+    }
+
+    .contact-page .section {
+        padding: 90px 0 100px;
+    }
+
+    .services-page footer,
+    .contact-page footer {
+        padding: 6px 0;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* Make footer overlay the hero on the home page and remove the white box */
+.home-page {
+    position: relative; /* establish positioning context for absolute footer */
+}
+
+.home-page footer,
+.hero + footer {
+    background: transparent;
+    padding: 8px 0;
+    position: absolute; /* overlay the hero without stretching page */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    margin-top: 0;
+}
+
+.home-page footer .container p,
+.hero + footer .container p {
+    color: #fff; /* white text over the hero image */
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .home-page footer,
+    .hero + footer {
+        padding: 6px 0;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* Ensure services/contact pages' background sections fill the viewport
+   so the footer sits on top of the image and no white gap appears */
+.services-page,
+.contact-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* preserve existing positioning context */
+}
+
+.services-page .bg-light,
+.contact-page .bg-contrato {
+    min-height: 100vh; /* make background cover full viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+/* Keep footer placed over the bottom of the background without pushing page height */
+.services-page footer,
+.contact-page footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Nav toggle (hamburger) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+}
+
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    display: block;
+    background: var(--branco);
+    height: 3px;
+    width: 22px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle .hamburger::before { top: -7px; }
+.nav-toggle .hamburger::after { top: 7px; }
+
+/* Mobile behavior: hide the standard nav and show hamburger */
+@media (max-width: 900px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 64px; /* below header */
+        right: 20px;
+        background: rgba(10,25,47,0.95);
+        padding: 12px 18px;
+        border-radius: 8px;
+        box-shadow: 0 8px 26px rgba(0,0,0,0.4);
+        z-index: 1001;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu.open {
+        display: block;
+    }
+
+    .nav-menu li {
+        margin: 8px 0;
+        list-style: none;
+    }
+
+    .nav-menu li a {
+        color: var(--branco);
+        display: block;
+        padding: 6px 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* reduce header nav padding to bring logo fully left on mobile */
+    header nav { padding: 0 12px; }
+    .logo img { height: 90px; }
+}
