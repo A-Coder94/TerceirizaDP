@@ -4,13 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        if (window.matchMedia && window.matchMedia('(max-width: 900px)').matches) {
-            if (!location.pathname.endsWith('mobile.html')) {
-                location.href = 'mobile.html';
-            }
-        }
-    </script>
     <title>Contato - Terceiriza DP | Assessoria Especializada Marta Rocha</title>
     <link rel="stylesheet" href="style.css">
     <link
@@ -40,23 +33,21 @@
         <section id="contato" class="section bg-contrato">
             <div class="container">
                 <div class="contact-wrapper">
-                    <h2 style="color: white;">Solicite um Orçamento</h2>
-                    <p style="color: white;">Deixe seus dados e entraremos em contato em breve.</p>
+                    <h2 style="color: white; text-align: center; margin-bottom: 10px;">Solicite um Orçamento</h2>
+                    <p style="color: white; text-align: center; margin-bottom: 30px;">Deixe seus dados e entraremos em
+                        contato em breve.</p>
 
-                    <form action="https://api.web3forms.com/submit" method="POST" id="form">
-
-                        <input type="hidden" name="access_key" value="SEU_ACCESS_KEY_AQUI">
-
+                    <form id="whatsapp-form">
                         <div class="input-group">
-                            <input type="text" name="name" placeholder="Seu Nome Completo" required>
+                            <input type="text" id="name" placeholder="Seu Nome Completo" required>
                         </div>
 
                         <div class="input-group">
-                            <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+                            <input type="email" id="email" placeholder="Seu Melhor E-mail" required>
                         </div>
 
                         <div class="input-group">
-                            <select name="servico" required>
+                            <select id="servico" required>
                                 <option value="" disabled selected>Qual serviço procura?</option>
                                 <option value="Empresas">Departamento Pessoal para Empresas</option>
                                 <option value="MEI">Gestão para MEI</option>
@@ -65,18 +56,15 @@
                         </div>
 
                         <div class="input-group">
-                            <textarea name="message" placeholder="Como podemos te ajudar?" required></textarea>
+                            <textarea id="message" placeholder="Como podemos te ajudar?" required></textarea>
                         </div>
 
-                        <input type="hidden" name="from_name" value="Site Terceiriza DP">
-                        <input type="hidden" name="subject" value="Novo Contato do Site!">
-
-                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
-
-                        <div id="result"></div>
+                        <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">
+                            Enviar via WhatsApp
+                        </button>
                     </form>
-                    <a href="https://wa.me/5511970152735" class="whatsapp-btn" target="_blank" rel="noopener">Enviar
-                        pelo WhatsApp</a>
+
+
                 </div>
             </div>
         </section>
