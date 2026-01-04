@@ -1,5 +1,5 @@
 // Alterar cor do header ao rolar a página
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const header = document.getElementById('header');
     if (window.scrollY > 50) {
         header.classList.add('scroll');
@@ -49,51 +49,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+const whatsappForm = document.getElementById('whatsapp-form');
 
-// Form submission logic (for contato.html)
-const form = document.getElementById('form');
-const result = document.getElementById('result');
+if (whatsappForm) {
+    whatsappForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const object = Object.fromEntries(formData);
-      const json = JSON.stringify(object);
-      result.innerHTML = "Enviando...";
+        // 1. Pega os valores dos campos
+        const nome = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const servico = document.getElementById('servico').value;
+        const mensagem = document.getElementById('message').value;
 
-        fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(async (response) => {
-                let json = await response.json();
-                if (response.status == 200) {
-                    result.innerHTML = "Mensagem enviada com sucesso!";
-                    result.style.color = "green";
-                } else {
-                    console.log(response);
-                    result.innerHTML = json.message;
-                    result.style.color = "red";
-                }
-            })
-            .catch(error => {
-                console.log(error);
-                result.innerHTML = "Algo deu errado!";
-            })
-            .then(function() {
-                form.reset();
-                setTimeout(() => {
-                    result.innerHTML = "";
-                }, 3000);
-            });
+        // 2. Configura o número do WhatsApp (apenas números, com DDD)
+        const telefone = "5511970152735";
+
+        // 3. Monta a mensagem formatada
+        const texto = `Olá, meu nome é *${nome}*.\n` +
+            `Meu e-mail: ${email}\n` +
+            `Estou interessado em: *${servico}*\n` +
+            `Mensagem: ${mensagem}`;
+
+        // 4. Codifica o texto para URL
+        const textoEncoded = encodeURIComponent(texto);
+
+        // 5. Cria o link final
+        const url = `https://wa.me/${telefone}?text=${textoEncoded}`;
+
+        // 6. Abre o WhatsApp em uma nova aba
+        window.open(url, '_blank');
     });
 }
-
 
 // Animação simples de entrada para os cards (for servicos.html)
 const cards = document.querySelectorAll('.card');
