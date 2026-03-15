@@ -1,11 +1,11 @@
-🌐 Terceiriza DP – Site Institucional
+#🌐 Terceiriza DP – Site Institucional
 
 URL: https://www.terceirizadp.com.br/
 
 Este repositório documenta o desenvolvimento do site institucional da Terceiriza DP, uma empresa especializada em soluções de Departamento Pessoal (DP) e terceirização de folha de pagamento para empresas que buscam eficiência, segurança jurídica e organização administrativa.
 
 O projeto foi desenvolvido com foco em clareza de informação, credibilidade e geração de leads, facilitando o contato entre empresas e a equipe especializada da Terceiriza DP.
-----
+
 
 #📌 Sobre a Empresa
 
@@ -22,9 +22,9 @@ Redução de riscos trabalhistas
 Suporte especializado em DP
 
 Otimização de processos administrativos
-----
 
-🎯 Objetivo do Site
+
+#🎯 Objetivo do Site
 
 O site tem caráter institucional e comercial, sendo o principal canal digital para apresentação da empresa e captação de novos clientes.
 
@@ -41,23 +41,23 @@ Entrar em contato direto com a equipe
 Conhecer a proposta de valor da empresa
 
 Além disso, o site fortalece a presença digital e credibilidade da empresa no mercado de BPO de Departamento Pessoal.
-----
 
-🧩 Estrutura do Site
+
+#🧩 Estrutura do Site
 
 O site foi organizado em seções estratégicas para melhorar a experiência do usuário e facilitar a navegação.
-----
 
-🏠 Home
+
+#🏠 Home
 
 Apresentação inicial da empresa com chamada principal destacando a proposta de valor:
 
 Gestão de Departamento Pessoal Inteligente.
 
 Inclui botão de ação para solicitação rápida de cotação.
-----
 
-🏢 A Empresa
+
+#🏢 A Empresa
 
 Seção institucional apresentando:
 
@@ -74,9 +74,9 @@ Eficiência operacional
 Segurança jurídica
 
 Redução de burocracia
-----
+ 
 
-⚙️ Soluções
+#⚙️ Soluções
 
 Área dedicada à apresentação dos serviços oferecidos, como:
 
@@ -87,9 +87,9 @@ Gestão de rotinas de Departamento Pessoal
 Suporte em obrigações trabalhistas
 
 Organização de processos administrativos
-----
+ 
 
-⭐ Diferenciais
+#⭐ Diferenciais
 
 Seção que apresenta os principais diferenciais competitivos da empresa:
 
@@ -104,9 +104,9 @@ Processos organizados e automatizados para garantir prazos.
 
 Redução de Custos
 Economia operacional comparada à manutenção de um DP interno.
-----
+ 
 
-📩 Solicitação de Orçamento
+#📩 Solicitação de Orçamento
 
 Área estratégica para geração de leads.
 
@@ -119,9 +119,9 @@ Informem detalhes sobre a necessidade
 Enviem o pedido diretamente via WhatsApp
 
 Esse processo reduz atrito e aumenta a conversão de contatos comerciais.
-----
+ 
 
-📞 Contato
+#📞 Contato
 
 Seção com informações de comunicação direta com a empresa:
 
@@ -132,9 +132,9 @@ Telefone / WhatsApp
 E-mail
 
 Redes sociais
-----
+ 
 
-🛠️ Tecnologias Utilizadas
+#🛠️ Tecnologias Utilizadas
 
 O site foi desenvolvido utilizando tecnologias modernas e leves para garantir boa performance e fácil manutenção.
 
@@ -151,9 +151,9 @@ Design Responsivo
 Integração com WhatsApp
 
 A estrutura foi planejada para ser rápida, acessível e adaptável a dispositivos móveis.
-----
+ 
 
-🎨 Design e Experiência do Usuário
+#🎨 Design e Experiência do Usuário
 
 O layout foi projetado para transmitir:
 
@@ -176,9 +176,9 @@ Estrutura responsiva (mobile-first)
 Uso estratégico de cores institucionais
 
 Destaque para chamadas de ação (CTA)
-----
+ 
 
-🚀 Funcionalidades
+#🚀 Funcionalidades
 
 O site possui diversas funcionalidades voltadas para experiência do usuário e captação de clientes:
 
@@ -193,9 +193,9 @@ Formulário de solicitação de orçamento
 Layout responsivo
 
 Estrutura otimizada para conversão
-----
+ 
 
-👥 Público-Alvo
+#👥 Público-Alvo
 
 O site foi desenvolvido para atender principalmente:
 
@@ -210,18 +210,18 @@ Departamentos de RH
 Contadores e gestores administrativos
 
 Empresas que desejam terceirizar o Departamento Pessoal e reduzir a complexidade da gestão trabalhista.
-----
+ 
 
-🌐 Acesso ao Projeto
+#🌐 Acesso ao Projeto
 
 O site está disponível publicamente no endereço:
 
 https://www.terceirizadp.com.br/
 
 Não é necessária instalação local para visualização.
-----
 
-📈 Impacto Digital
+
+#📈 Impacto Digital
 
 A presença digital da empresa contribui para:
 
@@ -234,9 +234,8 @@ Maior visibilidade online
 Facilidade de contato com empresas interessadas
 
 Consolidação da autoridade no segmento de BPO de DP
-----
-
-👨‍💻 Desenvolvimento
+ 
+#👨‍💻 Desenvolvimento
 
 O site foi desenvolvido com foco em:
 
@@ -259,12 +258,12 @@ Sistema de gestão de leads
 Integração com CRM
 
 Portal de documentos
-----
+ 
 
-🙌 Considerações
+#🙌 Considerações
 
 Este projeto representa a aplicação de tecnologia e design estratégico para fortalecer a presença digital de uma empresa especializada em gestão de Departamento Pessoal.
 
 O objetivo foi criar uma plataforma profissional, clara e eficiente, capaz de comunicar valor e facilitar a conexão entre empresas e especialistas.
-
-                                     💻 Desenvolvido com foco em eficiência, clareza e soluções digitais.
+ 
+                                      💻 Desenvolvido com foco em eficiência, clareza e soluções digitais.
