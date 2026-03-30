@@ -766,66 +766,6 @@
             window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(texto), "_blank");
         });
 
-        // 2. Funções do Chat
-        function toggleChat() {
-            const chat = document.getElementById('chat-box');
-            chat.style.display = (chat.style.display === 'none' || chat.style.display === '') ? 'flex' : 'none';
-            if (document.getElementById('chat-window').innerHTML.trim() === "") iniciarChat();
-        }
-
-        function iniciarChat() {
-            document.getElementById('chat-window').innerHTML = `
-        <div class="msg bot-msg">
-            Olá! Você concorda com o uso dos dados conforme a LGPD? <br><br>
-            <button onclick="aceitarTermos()" style="cursor:pointer; border:none; background:#004aad; color:white; padding:5px 10px; border-radius:5px;">Sim, concordo</button>
-        </div>`;
-        }
-
-        function aceitarTermos() {
-            appendMessage('Assistente', 'Como posso ajudar hoje? (FGTS, eSocial, Admissão)');
-            document.getElementById('user-input').disabled = false;
-        }
-
-        function appendMessage(sender, text) {
-            const chatWin = document.getElementById('chat-window');
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `msg ${sender === 'User' ? 'user-msg' : 'bot-msg'}`;
-            msgDiv.innerText = text;
-            chatWin.appendChild(msgDiv);
-            chatWin.scrollTop = chatWin.scrollHeight;
-        }
-
-        // 3. A função que estava causando o erro (Corrigida)
-        async function sendMessage() {
-            const input = document.getElementById('user-input');
-            const message = input.value.trim();
-            if (!message) return;
-
-            appendMessage('User', message);
-            input.value = '';
-
-            try {
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: message })
-                });
-
-                const data = await response.json();
-                let botResponse = data.response;
-
-                if (botResponse.includes("#CHAMAR_HUMANO")) {
-                    botResponse = botResponse.replace("#CHAMAR_HUMANO", "");
-                    appendMessage('Assistente', botResponse);
-                    exibirBotaoWhatsapp();
-                } else {
-                    appendMessage('Assistente', botResponse);
-                }
-            } catch (error) {
-                console.error("Erro:", error);
-                appendMessage('Assistente', "Erro: Servidor desligado ou indisponível.");
-            } // Aqui fecha o catch
-        } // Aqui fecha a função sendMessage
 
         function exibirBotaoWhatsapp() {
             const chatWin = document.getElementById('chat-window');
