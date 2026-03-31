@@ -759,14 +759,31 @@
         // 1. Configurações e WhatsApp
         const API_URL = "http://127.0.0.1:5000/perguntar";
 
-        document.getElementById('whatsappForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            var texto = "*Nova Solicitação*\n\n" + "👤 *Nome:* " + document.getElementById('nome').value;
-            var numeroWhatsApp = "5511970152735";
-            window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(texto), "_blank");
-        });
+
+    document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var nome = document.getElementById('nome').value;
+    var empresa = document.getElementById('empresa').value;
+    var servico = document.getElementById('servico').value;
+    var detalhes = document.getElementById('detalhes').value;
+
+    var texto = "*Nova Solicitação*\n\n" +
+                "👤 *Nome:* " + nome + "\n" +
+                "🏢 *Empresa:* " + empresa + "\n" +
+                "🛠️ *Serviço:* " + servico + "\n" +
+                "📝 *Detalhes:* " + (detalhes ? detalhes : "Não informado");
+
+    var numeroWhatsApp = "5511970152735";
+
+    window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(texto), "_blank");
+});
+        
 
 
+
+
+        
         function exibirBotaoWhatsapp() {
             const chatWin = document.getElementById('chat-window');
             const btnDiv = document.createElement('div');
@@ -790,7 +807,7 @@
                     hiddenPhotos.classList.add('show'); // Mostra as fotos
                     loadMoreBtn.style.display = 'none'; // Esconde o botão após clicar
 
-                    // Opcional: Re-executar animações de fade-up se você as usar
+                
                 });
             }
         });
