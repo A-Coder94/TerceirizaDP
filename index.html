@@ -257,7 +257,6 @@
         }
 
         /* Estilo das Bolhas de Mensagem */
-        /* No seu <style>, adicione conteúdo aos botões */
         .chat-icon::before {
             content: "💬";
         }
@@ -362,7 +361,6 @@
 </head>
 
 <body>
-
     <div class="top-bar d-none d-md-block">
         <div class="container d-flex justify-content-between">
             <span><i class="fas fa-check-circle text-primary me-2"></i>Especialistas em eSocial e Consultoria
@@ -375,7 +373,6 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="img/logo.png" alt="Logo Terceiriza DP" height="120" class="me-2">
-
 
             </a>
 
@@ -409,7 +406,7 @@
 
                     <div class="mb-4">
                         <h4 class="fw-bold mb-3 text-primary">Sua empresa precisa de organização no DP?</h4>
-                        <p class="lead text-muted">Solicite uma proposta personalizada em menos de 3 minutos e foque no
+                        <p class="lead text-muted">Solicite uma proposta personalizada e foque no
                             seu negócio.</p>
                     </div>
 
@@ -525,7 +522,6 @@
         </div>
     </div>
 </section>
-
 
     <section id="empresa" class="section-padding bg-light">
         <div class="container">
@@ -777,7 +773,6 @@ document.getElementById('whatsappForm').addEventListener('submit', function (e) 
 
     window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(texto), "_blank");
 });
-
         
         function exibirBotaoWhatsapp() {
             const chatWin = document.getElementById('chat-window');
@@ -790,7 +785,6 @@ document.getElementById('whatsappForm').addEventListener('submit', function (e) 
         document.getElementById('user-input').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendMessage();
         });
-
 
         document.addEventListener('DOMContentLoaded', () => {
             const loadMoreBtn = document.getElementById('load-more-btn');
