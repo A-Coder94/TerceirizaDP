@@ -754,25 +754,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // 1. Configurações e WhatsApp
-        const API_URL = "http://127.0.0.1:5000/perguntar";
-
+        
 document.getElementById('whatsappForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var nome = document.getElementById('nome').value;
-    var empresa = document.getElementById('empresa').value;
-    var servico = document.getElementById('servico').value;
-    var mensagem = document.getElementById('mensagem').value; 
-    var texto = "*NOVA SOLICITAÇÃO DO SITE*\n\n" + 
-                "👤 *Nome:* " + nome + "\n" +
-                "🏢 *Empresa:* " + empresa + "\n" +
-                "🛠️ *Serviço:* " + servico + "\n" +
-                "📝 *Detalhes:* " + (mensagem ? mensagem : "Não informado");
+    const nome = document.getElementById('nome').value.trim();
+    const empresa = document.getElementById('empresa').value.trim();
+    const servico = document.getElementById('servico').value;
+    const mensagem = document.getElementById('mensagem').value.trim();
 
-    var numeroWhatsApp = "5511970152735";
+    const texto =
+`*NOVA SOLICITAÇÃO DO SITE*
 
-    window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(texto), "_blank");
+👤 *Nome:* ${nome}
+🏢 *Empresa:* ${empresa}
+🛠️ *Serviço:* ${servico}
+📝 *Detalhes:* ${mensagem || "Não informado"}`;
+
+    const numeroWhatsApp = "5511970152735";
+
+    window.open(
+        `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`,
+        "_blank"
+    );
 });
+
         
         function exibirBotaoWhatsapp() {
             const chatWin = document.getElementById('chat-window');
