@@ -245,3 +245,18 @@ Portal de documentos
 Este projeto representa a aplicação de tecnologia e design estratégico para fortalecer a presença digital de uma empresa especializada em gestão de Departamento Pessoal.
 
 O objetivo foi criar uma plataforma profissional, clara e eficiente, capaz de comunicar valor e facilitar a conexão entre empresas e especialistas.
+
+#📄 Páginas do Projeto #
+
+- `index.html`: apresentação da empresa, soluções, diferenciais e formulário de orçamento.
+- `bpo.html`: BPO de folha de pagamento.
+- `consultoria.html`: consultoria trabalhista.
+- `esocial.html`: gestão de eSocial.
+- `beneficios.html`: gestão de benefícios.
+- `certificado.html`: certificação digital.
+
+## Visualização local
+
+Não é necessário instalar dependências nem executar um processo de build. Abra `index.html` em um navegador. É necessária conexão com a internet para carregar os recursos externos servidos por CDN e as imagens hospedadas externamente.
+
+Consulte o arquivo `LICENSE` para obter informações sobre a licença do projeto.

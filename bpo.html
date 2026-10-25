@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BPO de Folha | Terceiriza DP</title>
+    <title>BPO de Folha de Pagamento | Terceiriza DP</title>
+    <meta name="description"
+        content="Terceirize o processamento da folha de pagamento com a Terceiriza DP: cálculos, férias, rescisões e obrigações trabalhistas.">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -155,6 +157,77 @@
             text-decoration: none;
             transition: 0.2s;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :target {
+            scroll-margin-top: 100px;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--highlight-yellow);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar .navbar-nav {
+                align-items: stretch !important;
+                padding-top: 0.5rem;
+            }
+
+            .navbar .nav-item.ms-3 {
+                margin-left: 0 !important;
+            }
+
+            .navbar .btn-header {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .logo-img {
+                height: 56px;
+            }
+
+            .page-header {
+                padding: 3rem 0;
+                margin-bottom: 2rem;
+            }
+
+            .page-title {
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
+            }
+
+            .content-section h3 {
+                margin-top: 1.5rem;
+            }
+
+            .cta-box {
+                padding: 1.5rem;
+            }
+
+            footer {
+                padding-top: 3rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
     </style>
 </head>
 
@@ -171,16 +244,17 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="img/logo.png" alt="Logo Terceiriza DP" height="80" class="me-2">
+                <img src="img/logo.png" alt="Logo Terceiriza DP" class="logo-img me-2">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
-                title="Menu de navegação" aria-label="Menu de navegação">
+                title="Menu de navegação" aria-label="Menu de navegação" aria-controls="navbarMain"
+                aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#empresa">A Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sobre-empresa">A Empresa</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#servicos">Soluções</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#diferenciais">Diferenciais</a></li>
                     <li class="nav-item ms-3">
@@ -287,10 +361,11 @@
                     <ul class="fa-ul fa-ul-custom">
                         <li class="mb-2"><span class="fa-li"><i class="fas fa-map-marker-alt text-warning"></i></span>
                             R. Vera Cruz, 393 - Conceição, Diadema - SP</li>
-                        <li class="mb-2"><span class="fa-li"><i class="fab fa-whatsapp text-warning"></i></span> (11)
-                            97015-2735</li>
+                        <li class="mb-2"><span class="fa-li"><i class="fab fa-whatsapp text-warning"></i></span>
+                            <a href="https://wa.me/5511970152735" target="_blank" rel="noopener noreferrer">(11)
+                                97015-2735</a></li>
                         <li class="mb-2"><span class="fa-li"><i class="fas fa-envelope text-warning"></i></span>
-                            dp.folha42@gmail.com</li>
+                            <a href="mailto:dp.folha42@gmail.com">dp.folha42@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
